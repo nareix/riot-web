@@ -178,6 +178,8 @@ function onTokenLoginCompleted() {
 }
 
 async function loadApp() {
+    await SettingsStore.setValue("webRtcAllowPeerToPeer", null, "device", false);
+    
     if (window.vector_indexeddb_worker_script === undefined) {
         // If this is missing, something has probably gone wrong with
         // the bundling. The js-sdk will just fall back to accessing
